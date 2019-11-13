@@ -28,13 +28,25 @@ class RouletteGun extends Component{
     }, 2000)
   }
 
-
+  renderGun() {
+    const { chamber,spinningTheChamber } = this.state
+    const { bulletInChamber } = this.props
+    if (spinningTheChamber) {
+      return "Spinning the chamber and pulling the trigger!"
+    } else if(chamber === bulletInChamber) {
+      return "BANG!"
+    }else{
+      return "You are safe"
+    }
+  }
 
 
 
   render() {
     return (
       <div>
+        <p> {this.renderGun()} </p>
+
         <button onClick={this.handleClick}> Pull the Trigger </button>
       </div>
     )
