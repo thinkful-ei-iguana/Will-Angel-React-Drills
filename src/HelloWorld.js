@@ -12,9 +12,9 @@ class HelloWorld extends Component {
     return (
       <div>
         <p> Hello, {this.state.who} </p>
-        <button> World </button>
-        <button> Friend </button>
-        <button> React </button>
+        <button onClick={()=> this.setState({ who: "world" }) }> World </button>
+        <button onClick={()=> this.setState({ who: "friend" })}> Friend </button>
+        <button onClick={()=>this.setState({ who: "React" })}> React </button>
       </div>
     )
   }
